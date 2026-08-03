@@ -48,9 +48,9 @@ Massive Iteration: The model simulates the entire 48-team World Cup 100,000 time
 Calculating Championship Probability: Each team's overall chance of lifting the trophy is calculated simply as the number of times they won the tournament divided by 100,000.
 Statistical Stability: Running tens of thousands of simulations ensures that short-term luck evens out, leaving behind a reliable, statistically stable prediction of every team's true championship odds.
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-**⚖️ Model Evaluation: Strengths & Limitations**
 
+**⚖️ Model Evaluation: Strengths & Limitations**
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 **⚖️ Advantages**
 ---Strength-Adjusted: Multipliers account for quality of opposition, so weak-schedule records aren't overvalued.
