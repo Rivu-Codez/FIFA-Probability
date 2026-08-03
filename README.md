@@ -10,3 +10,5 @@ This project builds an end-to-end Python pipeline and custom mathematical model 
 **3. Feature Engineering: Aggregates performance metrics into World Cup Final Data.csv, computing each team's total matches, wins, losses, ties, win/loss/draw percentages, and goals scored per match.** 
 
 **4. Tournament Simulation (Main.py): Feeds these processed metrics into a custom mathematical model to calculate match probabilities and simulate tournament results and store this results in the Championship_Simulation_Results.csv file.**
+
+**EXPLANATION OF THE MATHEMATICAL MODEL**
