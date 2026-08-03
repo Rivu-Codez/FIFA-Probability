@@ -1,0 +1,379 @@
+date,home_team,away_team,home_score,away_score,tournament,city,country,neutral
+2023-01-09,Iraq,Saudi Arabia,2.0,0.0,Gulf Cup,Basra,Iraq,False
+2023-01-16,Iraq,Qatar,2.0,1.0,Gulf Cup,Basra,Iraq,False
+2023-01-28,United States,Colombia,0.0,0.0,Friendly,Carson,United States,False
+2023-03-23,Argentina,Panama,2.0,0.0,Friendly,Buenos Aires,Argentina,False
+2023-03-24,Australia,Ecuador,3.0,1.0,Friendly,Sydney,Australia,False
+2023-03-24,Japan,Uruguay,1.0,1.0,Friendly,Tokyo,Japan,False
+2023-03-24,South Korea,Colombia,2.0,2.0,Friendly,Ulsan,South Korea,False
+2023-03-24,France,Netherlands,4.0,0.0,UEFA Euro qualification,Paris,France,False
+2023-03-24,Sweden,Belgium,0.0,3.0,UEFA Euro qualification,Stockholm,Sweden,False
+2023-03-25,Morocco,Brazil,2.0,1.0,Friendly,Tangier,Morocco,False
+2023-03-25,Spain,Norway,3.0,0.0,UEFA Euro qualification,Málaga,Spain,False
+2023-03-25,Curaçao,Canada,0.0,2.0,CONCACAF Nations League,Willemstad,Curaçao,False
+2023-03-28,Argentina,Curaçao,7.0,0.0,Friendly,Santiago del Estero,Argentina,False
+2023-03-28,Australia,Ecuador,1.0,2.0,Friendly,Melbourne,Australia,False
+2023-03-28,Germany,Belgium,2.0,3.0,Friendly,Cologne,Germany,False
+2023-03-28,Japan,Colombia,1.0,2.0,Friendly,Osaka,Japan,False
+2023-03-28,South Korea,Uruguay,1.0,2.0,Friendly,Seoul,South Korea,False
+2023-03-28,Scotland,Spain,2.0,0.0,UEFA Euro qualification,Glasgow,Scotland,False
+2023-03-28,Turkey,Croatia,0.0,2.0,UEFA Euro qualification,Bursa,Turkey,False
+2023-04-19,United States,Mexico,1.0,1.0,Friendly,Glendale,United States,False
+2023-06-12,Morocco,Cape Verde,0.0,0.0,Friendly,Rabat,Morocco,False
+2023-06-14,Netherlands,Croatia,2.0,4.0,UEFA Nations League,Rotterdam,Netherlands,False
+2023-06-15,Panama,Canada,0.0,2.0,CONCACAF Nations League,Las Vegas,United States,True
+2023-06-15,United States,Mexico,3.0,0.0,CONCACAF Nations League,Las Vegas,United States,False
+2023-06-15,Argentina,Australia,2.0,0.0,Friendly,Beijing,China PR,True
+2023-06-16,Colombia,Iraq,1.0,0.0,Friendly,Valencia,Spain,True
+2023-06-16,Sweden,New Zealand,4.0,1.0,Friendly,Stockholm,Sweden,False
+2023-06-17,Norway,Scotland,1.0,2.0,UEFA Euro qualification,Oslo,Norway,False
+2023-06-17,Belgium,Austria,1.0,1.0,UEFA Euro qualification,Brussels,Belgium,False
+2023-06-17,Portugal,Bosnia and Herzegovina,3.0,0.0,UEFA Euro qualification,Lisbon,Portugal,False
+2023-06-17,South Africa,Morocco,2.0,1.0,African Cup of Nations qualification,Johannesburg,South Africa,False
+2023-06-18,Panama,Mexico,0.0,1.0,CONCACAF Nations League,Las Vegas,United States,True
+2023-06-18,United States,Canada,2.0,0.0,CONCACAF Nations League,Las Vegas,United States,False
+2023-06-18,Croatia,Spain,0.0,0.0,UEFA Nations League,Rotterdam,Netherlands,True
+2023-06-20,Algeria,Tunisia,1.0,1.0,Friendly,Annaba,Algeria,False
+2023-06-20,Brazil,Senegal,2.0,4.0,Friendly,Lisbon,Portugal,True
+2023-06-20,Germany,Colombia,0.0,2.0,Friendly,Gelsenkirchen,Germany,False
+2023-06-20,Austria,Sweden,2.0,0.0,UEFA Euro qualification,Vienna,Austria,False
+2023-06-20,Uzbekistan,Iran,0.0,1.0,CAFA Nations Cup,Tashkent,Uzbekistan,False
+2023-06-25,Haiti,Qatar,2.0,1.0,Gold Cup,Houston,United States,True
+2023-06-29,Haiti,Mexico,1.0,3.0,Gold Cup,Glendale,United States,True
+2023-07-02,Mexico,Qatar,0.0,1.0,Gold Cup,Santa Clara,United States,True
+2023-07-08,Panama,Qatar,4.0,0.0,Gold Cup,Arlington,United States,True
+2023-07-09,United States,Canada,2.0,2.0,Gold Cup,Cincinnati,United States,False
+2023-07-12,United States,Panama,1.0,1.0,Gold Cup,San Diego,United States,False
+2023-07-16,Mexico,Panama,1.0,0.0,Gold Cup,Inglewood,United States,True
+2023-09-07,Argentina,Ecuador,1.0,0.0,FIFA World Cup qualification,Buenos Aires,Argentina,False
+2023-09-07,Norway,Jordan,6.0,0.0,Friendly,Oslo,Norway,False
+2023-09-09,Germany,Japan,1.0,4.0,Friendly,Wolfsburg,Germany,False
+2023-09-09,Mexico,Australia,2.0,2.0,Friendly,Arlington,United States,True
+2023-09-09,United States,Uzbekistan,3.0,0.0,Friendly,St. Louis,United States,False
+2023-09-12,Ecuador,Uruguay,2.0,1.0,FIFA World Cup qualification,Quito,Ecuador,False
+2023-09-12,Egypt,Tunisia,1.0,3.0,Friendly,Cairo,Egypt,False
+2023-09-12,Germany,France,2.0,1.0,Friendly,Dortmund,Germany,False
+2023-09-12,Japan,Turkey,4.0,2.0,Friendly,Genk,Belgium,True
+2023-09-12,South Korea,Saudi Arabia,1.0,0.0,Friendly,Newcastle,England,True
+2023-09-12,Mexico,Uzbekistan,3.0,3.0,Friendly,Atlanta,United States,True
+2023-09-12,Scotland,England,1.0,3.0,Friendly,Glasgow,Scotland,False
+2023-09-12,Senegal,Algeria,0.0,1.0,Friendly,Diamniadio,Senegal,False
+2023-09-12,South Africa,DR Congo,1.0,0.0,Friendly,Johannesburg,South Africa,False
+2023-09-12,Sweden,Austria,1.0,3.0,UEFA Euro qualification,Stockholm,Sweden,False
+2023-10-12,Colombia,Uruguay,2.0,2.0,FIFA World Cup qualification,Barranquilla,Colombia,False
+2023-10-12,Argentina,Paraguay,1.0,0.0,FIFA World Cup qualification,Buenos Aires,Argentina,False
+2023-10-12,Algeria,Cape Verde,5.0,1.0,Friendly,Constantine,Algeria,False
+2023-10-12,Spain,Scotland,2.0,0.0,UEFA Euro qualification,Seville,Spain,False
+2023-10-12,Croatia,Turkey,0.0,1.0,UEFA Euro qualification,Osijek,Croatia,False
+2023-10-13,Curaçao,Panama,1.0,2.0,CONCACAF Nations League,Willemstad,Curaçao,False
+2023-10-13,DR Congo,New Zealand,1.0,1.0,Friendly,Murcia,Spain,True
+2023-10-13,England,Australia,1.0,0.0,Friendly,London,England,False
+2023-10-13,Iraq,Qatar,0.0,0.0,Friendly,Amman,Jordan,True
+2023-10-13,Japan,Canada,4.0,1.0,Friendly,Niigata,Japan,False
+2023-10-13,South Korea,Tunisia,4.0,0.0,Friendly,Seoul,South Korea,False
+2023-10-13,Netherlands,France,1.0,2.0,UEFA Euro qualification,Amsterdam,Netherlands,False
+2023-10-13,Austria,Belgium,2.0,3.0,UEFA Euro qualification,Vienna,Austria,False
+2023-10-14,Ivory Coast,Morocco,1.0,1.0,Friendly,Abidjan,Ivory Coast,False
+2023-10-14,Mexico,Ghana,2.0,0.0,Friendly,Charlotte,United States,True
+2023-10-14,United States,Germany,1.0,3.0,Friendly,East Hartford,United States,False
+2023-10-15,Norway,Spain,0.0,1.0,UEFA Euro qualification,Oslo,Norway,False
+2023-10-16,Algeria,Egypt,1.0,1.0,Friendly,Al Ain,United Arab Emirates,True
+2023-10-16,Belgium,Sweden,1.0,1.0,UEFA Euro qualification,Brussels,Belgium,False
+2023-10-16,Bosnia and Herzegovina,Portugal,0.0,5.0,UEFA Euro qualification,Zenica,Bosnia and Herzegovina,False
+2023-10-17,Ecuador,Colombia,0.0,0.0,FIFA World Cup qualification,Quito,Ecuador,False
+2023-10-17,Uruguay,Brazil,2.0,0.0,FIFA World Cup qualification,Montevideo,Uruguay,False
+2023-10-17,Australia,New Zealand,2.0,0.0,Soccer Ashes,Brentford,England,True
+2023-10-17,France,Scotland,4.0,1.0,Friendly,Lille,France,False
+2023-10-17,Ivory Coast,South Africa,1.0,1.0,Friendly,Abidjan,Ivory Coast,False
+2023-10-17,Mexico,Germany,2.0,2.0,Friendly,Philadelphia,United States,True
+2023-10-17,United States,Ghana,4.0,0.0,Friendly,Nashville,United States,False
+2023-11-16,Colombia,Brazil,2.0,1.0,FIFA World Cup qualification,Barranquilla,Colombia,False
+2023-11-16,Argentina,Uruguay,0.0,2.0,FIFA World Cup qualification,Buenos Aires,Argentina,False
+2023-11-18,Germany,Turkey,2.0,3.0,Friendly,Berlin,Germany,False
+2023-11-19,Scotland,Norway,3.0,3.0,UEFA Euro qualification,Glasgow,Scotland,False
+2023-11-21,Paraguay,Colombia,0.0,1.0,FIFA World Cup qualification,Asunción,Paraguay,False
+2023-11-21,Brazil,Argentina,0.0,1.0,FIFA World Cup qualification,Rio de Janeiro,Brazil,False
+2023-11-21,Uzbekistan,Iran,2.0,2.0,FIFA World Cup qualification,Tashkent,Uzbekistan,False
+2023-11-21,Jordan,Saudi Arabia,0.0,2.0,FIFA World Cup qualification,Amman,Jordan,False
+2023-11-21,Austria,Germany,2.0,0.0,Friendly,Vienna,Austria,False
+2023-12-16,Mexico,Colombia,2.0,3.0,Friendly,Los Angeles,United States,True
+2024-01-05,Qatar,Jordan,1.0,2.0,Friendly,Al Rayyan,Qatar,False
+2024-01-06,Iraq,South Korea,0.0,1.0,Friendly,Abu Dhabi,United Arab Emirates,True
+2024-01-09,Japan,Jordan,6.0,1.0,Friendly,Doha,Qatar,True
+2024-01-10,Tunisia,Cape Verde,2.0,0.0,Friendly,Radès,Tunisia,False
+2024-01-14,Ghana,Cape Verde,1.0,2.0,African Cup of Nations,Abidjan,Ivory Coast,True
+2024-01-18,Egypt,Ghana,2.0,2.0,African Cup of Nations,Abidjan,Ivory Coast,True
+2024-01-19,Iraq,Japan,2.0,1.0,AFC Asian Cup,Al Rayyan,Qatar,True
+2024-01-20,Jordan,South Korea,2.0,2.0,AFC Asian Cup,Doha,Qatar,True
+2024-01-21,Morocco,DR Congo,1.0,1.0,African Cup of Nations,San-Pédro,Ivory Coast,True
+2024-01-22,Cape Verde,Egypt,2.0,2.0,African Cup of Nations,Abidjan,Ivory Coast,True
+2024-01-23,Australia,Uzbekistan,1.0,1.0,AFC Asian Cup,Al Wakrah,Qatar,True
+2024-01-24,South Africa,Tunisia,0.0,0.0,African Cup of Nations,Korhogo,Ivory Coast,True
+2024-01-28,Egypt,DR Congo,1.0,1.0,African Cup of Nations,San-Pédro,Ivory Coast,True
+2024-01-29,Iraq,Jordan,2.0,3.0,AFC Asian Cup,Al Rayyan,Qatar,True
+2024-01-29,Ivory Coast,Senegal,1.0,1.0,African Cup of Nations,Yamoussoukro,Ivory Coast,False
+2024-01-30,Saudi Arabia,South Korea,1.0,1.0,AFC Asian Cup,Al Rayyan,Qatar,True
+2024-01-30,Morocco,South Africa,0.0,2.0,African Cup of Nations,San-Pédro,Ivory Coast,True
+2024-02-02,Australia,South Korea,1.0,2.0,AFC Asian Cup,Al Wakrah,Qatar,True
+2024-02-03,Iran,Japan,2.0,1.0,AFC Asian Cup,Al Rayyan,Qatar,True
+2024-02-03,Qatar,Uzbekistan,1.0,1.0,AFC Asian Cup,Al Khor,Qatar,False
+2024-02-03,Cape Verde,South Africa,0.0,0.0,African Cup of Nations,Yamoussoukro,Ivory Coast,True
+2024-02-06,Jordan,South Korea,2.0,0.0,AFC Asian Cup,Al Rayyan,Qatar,True
+2024-02-07,Qatar,Iran,3.0,2.0,AFC Asian Cup,Doha,Qatar,False
+2024-02-07,Ivory Coast,DR Congo,1.0,0.0,African Cup of Nations,Ebimpé,Ivory Coast,False
+2024-02-10,Qatar,Jordan,3.0,1.0,AFC Asian Cup,Lusail,Qatar,False
+2024-02-10,South Africa,DR Congo,0.0,0.0,African Cup of Nations,Abidjan,Ivory Coast,True
+2024-03-21,Panama,Mexico,0.0,3.0,CONCACAF Nations League,Arlington,United States,True
+2024-03-21,Portugal,Sweden,5.0,2.0,Friendly,Guimarães,Portugal,False
+2024-03-22,Egypt,New Zealand,1.0,0.0,FIFA Series,Cairo,Egypt,False
+2024-03-22,Netherlands,Scotland,4.0,0.0,Friendly,Amsterdam,Netherlands,False
+2024-03-22,Norway,Czech Republic,1.0,2.0,Friendly,Oslo,Norway,False
+2024-03-22,Spain,Colombia,0.0,1.0,Friendly,London,England,True
+2024-03-23,Tunisia,Croatia,0.0,0.0,FIFA Series,Cairo,Egypt,True
+2024-03-23,England,Brazil,0.0,1.0,Friendly,London,England,False
+2024-03-23,France,Germany,0.0,2.0,Friendly,Lyon,France,False
+2024-03-24,United States,Mexico,2.0,0.0,CONCACAF Nations League,Arlington,United States,False
+2024-03-26,Algeria,South Africa,3.0,3.0,FIFA Series,Algiers,Algeria,False
+2024-03-26,Egypt,Croatia,2.0,4.0,FIFA Series,Cairo,Egypt,False
+2024-03-26,New Zealand,Tunisia,0.0,0.0,FIFA Series,Cairo,Egypt,True
+2024-03-26,Austria,Turkey,6.0,1.0,Friendly,Vienna,Austria,False
+2024-03-26,England,Belgium,2.0,2.0,Friendly,London,England,False
+2024-03-26,Germany,Netherlands,2.0,1.0,Friendly,Frankfurt,Germany,False
+2024-03-26,Ivory Coast,Uruguay,2.0,1.0,Friendly,Lens,France,True
+2024-03-26,Spain,Brazil,3.0,3.0,Friendly,Madrid,Spain,False
+2024-06-03,England,Bosnia and Herzegovina,3.0,0.0,Friendly,Newcastle,England,False
+2024-06-05,Mexico,Uruguay,0.0,4.0,Friendly,Denver,United States,True
+2024-06-06,Netherlands,Canada,4.0,0.0,Friendly,Rotterdam,Netherlands,False
+2024-06-06,Senegal,DR Congo,1.0,1.0,FIFA World Cup qualification,Diamniadio,Senegal,False
+2024-06-08,Mexico,Brazil,2.0,3.0,Friendly,College Station,United States,True
+2024-06-08,Portugal,Croatia,1.0,2.0,Friendly,Oeiras,Portugal,False
+2024-06-08,Switzerland,Austria,1.0,1.0,Friendly,St. Gallen,Switzerland,False
+2024-06-08,United States,Colombia,1.0,5.0,Friendly,Landover,United States,False
+2024-06-09,Argentina,Ecuador,1.0,0.0,Friendly,Chicago,United States,True
+2024-06-09,France,Canada,0.0,0.0,Friendly,Bordeaux,France,False
+2024-06-11,Iran,Uzbekistan,0.0,0.0,FIFA World Cup qualification,Tehran,Iran,False
+2024-06-11,Saudi Arabia,Jordan,1.0,2.0,FIFA World Cup qualification,Riyadh,Saudi Arabia,False
+2024-06-12,United States,Brazil,1.0,1.0,Friendly,Orlando,United States,False
+2024-06-14,Germany,Scotland,5.0,1.0,UEFA Euro,Munich,Germany,False
+2024-06-15,Spain,Croatia,3.0,0.0,UEFA Euro,Berlin,Germany,True
+2024-06-16,Panama,Paraguay,0.0,1.0,Friendly,Panama City,Panama,False
+2024-06-17,Austria,France,0.0,1.0,UEFA Euro,Düsseldorf,Germany,True
+2024-06-18,Portugal,Czech Republic,2.0,1.0,UEFA Euro,Leipzig,Germany,True
+2024-06-19,Scotland,Switzerland,1.0,1.0,UEFA Euro,Cologne,Germany,True
+2024-06-20,Argentina,Canada,2.0,0.0,Copa América,Atlanta,United States,True
+2024-06-21,Netherlands,France,0.0,0.0,UEFA Euro,Leipzig,Germany,True
+2024-06-22,Turkey,Portugal,0.0,3.0,UEFA Euro,Dortmund,Germany,True
+2024-06-23,Germany,Switzerland,1.0,1.0,UEFA Euro,Frankfurt,Germany,False
+2024-06-23,Uruguay,Panama,3.0,1.0,Copa América,Miami Gardens,United States,True
+2024-06-24,Colombia,Paraguay,2.0,1.0,Copa América,Houston,United States,True
+2024-06-25,Netherlands,Austria,2.0,3.0,UEFA Euro,Berlin,Germany,True
+2024-06-26,Czech Republic,Turkey,1.0,2.0,UEFA Euro,Hamburg,Germany,True
+2024-06-27,United States,Panama,1.0,2.0,Copa América,Atlanta,United States,False
+2024-06-28,Paraguay,Brazil,1.0,4.0,Copa América,Las Vegas,United States,True
+2024-06-30,Mexico,Ecuador,0.0,0.0,Copa América,Glendale,United States,True
+2024-07-01,France,Belgium,1.0,0.0,UEFA Euro,Düsseldorf,Germany,True
+2024-07-01,United States,Uruguay,0.0,1.0,Copa América,Kansas City,United States,False
+2024-07-02,Austria,Turkey,1.0,2.0,UEFA Euro,Leipzig,Germany,True
+2024-07-02,Brazil,Colombia,1.0,1.0,Copa América,Santa Clara,United States,True
+2024-07-04,Argentina,Ecuador,1.0,1.0,Copa América,Houston,United States,True
+2024-07-05,Germany,Spain,1.0,2.0,UEFA Euro,Stuttgart,Germany,False
+2024-07-05,Portugal,France,0.0,0.0,UEFA Euro,Hamburg,Germany,True
+2024-07-06,England,Switzerland,1.0,1.0,UEFA Euro,Düsseldorf,Germany,True
+2024-07-06,Netherlands,Turkey,2.0,1.0,UEFA Euro,Berlin,Germany,True
+2024-07-06,Uruguay,Brazil,0.0,0.0,Copa América,Las Vegas,United States,True
+2024-07-06,Colombia,Panama,5.0,0.0,Copa América,Glendale,United States,True
+2024-07-09,Spain,France,2.0,1.0,UEFA Euro,Munich,Germany,True
+2024-07-09,Argentina,Canada,2.0,0.0,Copa América,East Rutherford,United States,True
+2024-07-10,Netherlands,England,1.0,2.0,UEFA Euro,Dortmund,Germany,True
+2024-07-10,Uruguay,Colombia,0.0,1.0,Copa América,Charlotte,United States,True
+2024-07-13,Canada,Uruguay,2.0,2.0,Copa América,Charlotte,United States,True
+2024-07-14,Spain,England,2.0,1.0,UEFA Euro,Berlin,Germany,True
+2024-07-14,Argentina,Colombia,1.0,0.0,Copa América,Miami Gardens,United States,True
+2024-09-05,Portugal,Croatia,2.0,1.0,UEFA Nations League,Lisbon,Portugal,False
+2024-09-06,Egypt,Cape Verde,3.0,0.0,African Cup of Nations qualification,Cairo,Egypt,False
+2024-09-06,Uruguay,Paraguay,0.0,0.0,FIFA World Cup qualification,Montevideo,Uruguay,False
+2024-09-06,Brazil,Ecuador,1.0,0.0,FIFA World Cup qualification,Curitiba,Brazil,False
+2024-09-07,Mexico,New Zealand,3.0,0.0,Friendly,Pasadena,United States,True
+2024-09-07,United States,Canada,1.0,2.0,Friendly,Kansas City,United States,False
+2024-09-07,Netherlands,Bosnia and Herzegovina,5.0,2.0,UEFA Nations League,Eindhoven,Netherlands,False
+2024-09-08,Portugal,Scotland,2.0,1.0,UEFA Nations League,Lisbon,Portugal,False
+2024-09-08,Switzerland,Spain,1.0,4.0,UEFA Nations League,Geneva,Switzerland,False
+2024-09-09,France,Belgium,2.0,0.0,UEFA Nations League,Décines-Charpieu,France,False
+2024-09-09,Norway,Austria,2.0,1.0,UEFA Nations League,Oslo,Norway,False
+2024-09-10,Mexico,Canada,0.0,0.0,Friendly,Arlington,United States,True
+2024-09-10,United States,New Zealand,1.0,1.0,Friendly,Cincinnati,United States,False
+2024-09-10,Netherlands,Germany,2.0,2.0,UEFA Nations League,Amsterdam,Netherlands,False
+2024-09-10,Colombia,Argentina,2.0,1.0,FIFA World Cup qualification,Barranquilla,Colombia,False
+2024-09-10,Paraguay,Brazil,1.0,0.0,FIFA World Cup qualification,Asunción,Paraguay,False
+2024-10-10,Ecuador,Paraguay,0.0,0.0,FIFA World Cup qualification,Quito,Ecuador,False
+2024-10-10,Uzbekistan,Iran,0.0,0.0,FIFA World Cup qualification,Tashkent,Uzbekistan,False
+2024-10-10,Jordan,South Korea,0.0,2.0,FIFA World Cup qualification,Amman,Jordan,False
+2024-10-10,Saudi Arabia,Japan,0.0,2.0,FIFA World Cup qualification,Jeddah,Saudi Arabia,False
+2024-10-11,Bosnia and Herzegovina,Germany,1.0,2.0,UEFA Nations League,Zenica,Bosnia and Herzegovina,False
+2024-10-12,United States,Panama,2.0,0.0,Friendly,Austin,United States,False
+2024-10-12,Croatia,Scotland,2.0,1.0,UEFA Nations League,Zagreb,Croatia,False
+2024-10-13,Austria,Norway,5.0,1.0,UEFA Nations League,Linz,Austria,False
+2024-10-14,Belgium,France,1.0,2.0,UEFA Nations League,Leuven,Belgium,False
+2024-10-14,Germany,Netherlands,1.0,0.0,UEFA Nations League,Munich,Germany,False
+2024-10-15,Canada,Panama,2.0,1.0,Friendly,Toronto,Canada,False
+2024-10-15,Mexico,United States,2.0,0.0,Friendly,Zapopan,Mexico,False
+2024-10-15,Scotland,Portugal,0.0,0.0,UEFA Nations League,Glasgow,Scotland,False
+2024-10-15,Uruguay,Ecuador,0.0,0.0,FIFA World Cup qualification,Montevideo,Uruguay,False
+2024-10-15,Iran,Qatar,4.0,1.0,FIFA World Cup qualification,Dubai,United Arab Emirates,True
+2024-10-15,South Korea,Iraq,3.0,2.0,FIFA World Cup qualification,Yongin,South Korea,False
+2024-10-15,Japan,Australia,1.0,1.0,FIFA World Cup qualification,Saitama,Japan,False
+2024-11-14,Paraguay,Argentina,2.0,1.0,FIFA World Cup qualification,Asunción,Paraguay,False
+2024-11-14,Qatar,Uzbekistan,3.0,2.0,FIFA World Cup qualification,Al Rayyan,Qatar,False
+2024-11-14,Iraq,Jordan,0.0,0.0,FIFA World Cup qualification,Basra,Iraq,False
+2024-11-14,Australia,Saudi Arabia,0.0,0.0,FIFA World Cup qualification,Melbourne,Australia,False
+2024-11-15,Scotland,Croatia,1.0,0.0,UEFA Nations League,Glasgow,Scotland,False
+2024-11-15,Uruguay,Colombia,3.0,2.0,FIFA World Cup qualification,Montevideo,Uruguay,False
+2024-11-15,Cape Verde,Egypt,1.0,1.0,African Cup of Nations qualification,Praia,Cape Verde,False
+2024-11-16,Germany,Bosnia and Herzegovina,7.0,0.0,UEFA Nations League,Freiburg,Germany,False
+2024-11-18,Croatia,Portugal,1.0,1.0,UEFA Nations League,Split,Croatia,False
+2024-11-18,Spain,Switzerland,3.0,2.0,UEFA Nations League,Santa Cruz de Tenerife,Spain,False
+2024-11-19,Bosnia and Herzegovina,Netherlands,1.0,1.0,UEFA Nations League,Zenica,Bosnia and Herzegovina,False
+2024-11-19,Colombia,Ecuador,0.0,1.0,FIFA World Cup qualification,Barranquilla,Colombia,False
+2024-11-19,Brazil,Uruguay,1.0,1.0,FIFA World Cup qualification,Salvador,Brazil,False
+2024-12-28,Iraq,Saudi Arabia,1.0,3.0,Gulf Cup,Kuwait City,Kuwait,True
+2025-01-22,Uzbekistan,Jordan,0.0,0.0,Friendly,Doha,Qatar,True
+2025-03-20,Canada,Mexico,0.0,2.0,CONCACAF Nations League,Inglewood,United States,True
+2025-03-20,United States,Panama,0.0,1.0,CONCACAF Nations League,Inglewood,United States,False
+2025-03-20,Croatia,France,2.0,0.0,UEFA Nations League,Split,Croatia,False
+2025-03-20,Netherlands,Spain,2.0,2.0,UEFA Nations League,Rotterdam,Netherlands,False
+2025-03-20,Brazil,Colombia,2.0,1.0,FIFA World Cup qualification,Brasília,Brazil,False
+2025-03-21,Uruguay,Argentina,0.0,1.0,FIFA World Cup qualification,Montevideo,Uruguay,False
+2025-03-23,United States,Canada,1.0,2.0,CONCACAF Nations League,Inglewood,United States,False
+2025-03-23,Panama,Mexico,1.0,2.0,CONCACAF Nations League,Inglewood,United States,True
+2025-03-23,France,Croatia,2.0,0.0,UEFA Nations League,Paris,France,False
+2025-03-23,Spain,Netherlands,3.0,3.0,UEFA Nations League,Valencia,Spain,False
+2025-03-25,Colombia,Paraguay,2.0,2.0,FIFA World Cup qualification,Barranquilla,Colombia,False
+2025-03-25,Argentina,Brazil,4.0,1.0,FIFA World Cup qualification,Buenos Aires,Argentina,False
+2025-03-25,Iran,Uzbekistan,2.0,2.0,FIFA World Cup qualification,Tehran,Iran,False
+2025-03-25,South Korea,Jordan,1.0,1.0,FIFA World Cup qualification,Suwon,South Korea,False
+2025-03-25,Japan,Saudi Arabia,0.0,0.0,FIFA World Cup qualification,Saitama,Japan,False
+2025-05-30,Saudi Arabia,Jordan,2.0,0.0,Friendly,Dammam,Saudi Arabia,False
+2025-06-04,Germany,Portugal,1.0,2.0,UEFA Nations League,Munich,Germany,False
+2025-06-05,Spain,France,5.0,4.0,UEFA Nations League,Stuttgart,Germany,True
+2025-06-05,Ecuador,Brazil,0.0,0.0,FIFA World Cup qualification,Guayaquil,Ecuador,False
+2025-06-05,Paraguay,Uruguay,2.0,0.0,FIFA World Cup qualification,Asunción,Paraguay,False
+2025-06-05,Qatar,Iran,1.0,0.0,FIFA World Cup qualification,Al Rayyan,Qatar,False
+2025-06-05,Iraq,South Korea,0.0,2.0,FIFA World Cup qualification,Basra,Iraq,False
+2025-06-05,Australia,Japan,1.0,0.0,FIFA World Cup qualification,Perth,Australia,False
+2025-06-06,Morocco,Tunisia,2.0,0.0,Friendly,Fès,Morocco,False
+2025-06-07,Mexico,Switzerland,2.0,4.0,Friendly,Salt Lake City,United States,True
+2025-06-07,United States,Turkey,1.0,2.0,Friendly,East Hartford,United States,False
+2025-06-07,Ivory Coast,New Zealand,0.0,1.0,Canadian Shield,Toronto,Canada,True
+2025-06-08,Germany,France,0.0,2.0,UEFA Nations League,Stuttgart,Germany,False
+2025-06-08,Portugal,Spain,2.0,2.0,UEFA Nations League,Munich,Germany,True
+2025-06-09,Croatia,Czech Republic,5.0,1.0,FIFA World Cup qualification,Osijek,Croatia,False
+2025-06-10,England,Senegal,1.0,3.0,Friendly,London,England,False
+2025-06-10,Mexico,Turkey,1.0,0.0,Friendly,Chapel Hill,United States,True
+2025-06-10,Sweden,Algeria,4.0,3.0,Friendly,Solna,Sweden,False
+2025-06-10,United States,Switzerland,0.0,4.0,Friendly,Nashville,United States,False
+2025-06-10,Argentina,Colombia,1.0,1.0,FIFA World Cup qualification,Buenos Aires,Argentina,False
+2025-06-10,Brazil,Paraguay,1.0,0.0,FIFA World Cup qualification,São Paulo,Brazil,False
+2025-06-10,Uzbekistan,Qatar,3.0,0.0,FIFA World Cup qualification,Tashkent,Uzbekistan,False
+2025-06-10,Jordan,Iraq,0.0,1.0,FIFA World Cup qualification,Amman,Jordan,False
+2025-06-10,Saudi Arabia,Australia,1.0,2.0,FIFA World Cup qualification,Jeddah,Saudi Arabia,False
+2025-06-10,Canada,Ivory Coast,0.0,0.0,Canadian Shield,Toronto,Canada,False
+2025-06-10,Haiti,Curaçao,1.0,5.0,FIFA World Cup qualification,Oranjestad,Aruba,True
+2025-06-15,Haiti,Saudi Arabia,0.0,1.0,Gold Cup,San Diego,United States,True
+2025-06-19,United States,Saudi Arabia,1.0,0.0,Gold Cup,Austin,United States,False
+2025-06-21,Curaçao,Canada,1.0,1.0,Gold Cup,Houston,United States,True
+2025-06-22,United States,Haiti,2.0,1.0,Gold Cup,Arlington,United States,False
+2025-06-28,Mexico,Saudi Arabia,2.0,0.0,Gold Cup,Glendale,United States,True
+2025-07-06,United States,Mexico,1.0,2.0,Gold Cup,Houston,United States,False
+2025-09-04,Paraguay,Ecuador,0.0,0.0,FIFA World Cup qualification,Asunción,Paraguay,False
+2025-09-05,Australia,New Zealand,1.0,0.0,Soccer Ashes,Canberra,Australia,False
+2025-09-06,Mexico,Japan,0.0,0.0,Friendly,Oakland,United States,True
+2025-09-06,United States,South Korea,0.0,2.0,Friendly,Harrison,United States,False
+2025-09-07,Turkey,Spain,0.0,6.0,FIFA World Cup qualification,Konya,Turkey,False
+2025-09-08,Czech Republic,Saudi Arabia,1.0,1.0,Friendly,Hradec Králové,Czech Republic,False
+2025-09-09,Mexico,South Korea,2.0,2.0,Friendly,Nashville,United States,True
+2025-09-09,New Zealand,Australia,1.0,3.0,Soccer Ashes,Auckland,New Zealand,False
+2025-09-09,United States,Japan,2.0,0.0,Friendly,Columbus,United States,False
+2025-09-09,Ecuador,Argentina,1.0,0.0,FIFA World Cup qualification,Guayaquil,Ecuador,False
+2025-09-09,DR Congo,Senegal,2.0,3.0,FIFA World Cup qualification,Kinshasa,DR Congo,False
+2025-09-09,Bosnia and Herzegovina,Austria,1.0,2.0,FIFA World Cup qualification,Zenica,Bosnia and Herzegovina,False
+2025-10-09,Czech Republic,Croatia,0.0,0.0,FIFA World Cup qualification,Prague,Czech Republic,False
+2025-10-10,Canada,Australia,0.0,1.0,Friendly,Montreal,Canada,False
+2025-10-10,Japan,Paraguay,2.0,2.0,Kirin Cup,Osaka,Japan,False
+2025-10-10,South Korea,Brazil,0.0,5.0,Friendly,Seoul,South Korea,False
+2025-10-10,United States,Ecuador,1.0,1.0,Friendly,Austin,United States,False
+2025-10-10,Sweden,Switzerland,0.0,2.0,FIFA World Cup qualification,Solna,Sweden,False
+2025-10-11,Mexico,Colombia,0.0,4.0,Friendly,Arlington,United States,True
+2025-10-13,Uzbekistan,Uruguay,1.0,2.0,Friendly,Malacca City,Malaysia,True
+2025-10-14,Japan,Brazil,3.0,2.0,Kirin Cup,Tokyo,Japan,False
+2025-10-14,Canada,Colombia,0.0,0.0,Friendly,Harrison,United States,True
+2025-10-14,South Korea,Paraguay,2.0,0.0,Friendly,Seoul,South Korea,False
+2025-10-14,Mexico,Ecuador,1.0,1.0,Friendly,Zapopan,Mexico,False
+2025-10-14,Norway,New Zealand,1.0,1.0,Friendly,Oslo,Norway,False
+2025-10-14,United States,Australia,2.0,1.0,Friendly,Denver,United States,False
+2025-10-14,Saudi Arabia,Iraq,0.0,0.0,FIFA World Cup qualification,Jeddah,Saudi Arabia,False
+2025-11-13,Canada,Ecuador,0.0,0.0,Friendly,Toronto,Canada,False
+2025-11-13,Iran,Cape Verde,0.0,0.0,Al Ain International Cup,Al Ain,United Arab Emirates,True
+2025-11-14,Japan,Ghana,2.0,0.0,Kirin Cup,Toyota,Japan,False
+2025-11-14,Saudi Arabia,Ivory Coast,1.0,0.0,Friendly,Jeddah,Saudi Arabia,False
+2025-11-14,Tunisia,Jordan,3.0,2.0,Friendly,Radès,Tunisia,False
+2025-11-14,Uzbekistan,Egypt,2.0,0.0,Al Ain International Cup,Al Ain,United Arab Emirates,True
+2025-11-15,Brazil,Senegal,2.0,0.0,Friendly,London,England,True
+2025-11-15,Colombia,New Zealand,2.0,1.0,Friendly,Fort Lauderdale,United States,True
+2025-11-15,Mexico,Uruguay,0.0,0.0,Friendly,Torreón,Mexico,False
+2025-11-15,United States,Paraguay,2.0,1.0,Friendly,Chester,United States,False
+2025-11-15,Switzerland,Sweden,4.0,1.0,FIFA World Cup qualification,Geneva,Switzerland,False
+2025-11-17,Cape Verde,Egypt,1.0,1.0,Al Ain International Cup,Al Ain,United Arab Emirates,True
+2025-11-18,Saudi Arabia,Algeria,0.0,2.0,Friendly,Jeddah,Saudi Arabia,False
+2025-11-18,Brazil,Tunisia,1.0,1.0,Friendly,Lille,France,True
+2025-11-18,Colombia,Australia,3.0,0.0,Friendly,New York,United States,True
+2025-11-18,Ecuador,New Zealand,2.0,0.0,Friendly,Harrison,United States,True
+2025-11-18,South Korea,Ghana,1.0,0.0,Friendly,Seoul,South Korea,False
+2025-11-18,Mexico,Paraguay,1.0,2.0,Friendly,San Antonio,United States,True
+2025-11-18,United States,Uruguay,5.0,1.0,Friendly,Tampa,United States,False
+2025-11-18,Spain,Turkey,2.0,2.0,FIFA World Cup qualification,Seville,Spain,False
+2025-11-18,Austria,Bosnia and Herzegovina,1.0,1.0,FIFA World Cup qualification,Vienna,Austria,False
+2025-11-18,Iran,Uzbekistan,0.0,0.0,Al Ain International Cup,Al Ain,United Arab Emirates,True
+2025-12-07,Qatar,Tunisia,0.0,3.0,Arab Cup,Al Khor,Qatar,False
+2025-12-08,Morocco,Saudi Arabia,1.0,0.0,Arab Cup,Lusail,Qatar,True
+2025-12-09,Egypt,Jordan,0.0,3.0,Arab Cup,Al Khor,Qatar,True
+2025-12-09,Algeria,Iraq,2.0,0.0,Arab Cup,Al Rayyan,Qatar,True
+2025-12-12,Jordan,Iraq,1.0,0.0,Arab Cup,Al Rayyan,Qatar,True
+2025-12-15,Saudi Arabia,Jordan,0.0,1.0,Arab Cup,Al Khor,Qatar,True
+2025-12-18,Jordan,Morocco,2.0,3.0,Arab Cup,Lusail,Qatar,True
+2025-12-26,Egypt,South Africa,1.0,0.0,African Cup of Nations,Agadir,Morocco,True
+2025-12-27,Senegal,DR Congo,1.0,1.0,African Cup of Nations,Tangier,Morocco,True
+2026-01-06,Algeria,DR Congo,1.0,0.0,African Cup of Nations,Rabat,Morocco,True
+2026-01-10,Egypt,Ivory Coast,3.0,2.0,African Cup of Nations,Agadir,Morocco,True
+2026-01-14,Senegal,Egypt,1.0,0.0,African Cup of Nations,Tangier,Morocco,True
+2026-01-18,Morocco,Senegal,3.0,0.0,African Cup of Nations,Rabat,Morocco,False
+2026-01-22,Panama,Mexico,0.0,1.0,Friendly,Panama City,Panama,False
+2026-03-26,Brazil,France,1.0,2.0,Friendly,Foxborough,United States,True
+2026-03-26,Colombia,Croatia,1.0,2.0,Friendly,Orlando,United States,True
+2026-03-27,Austria,Ghana,5.0,1.0,Friendly,Vienna,Austria,False
+2026-03-27,England,Uruguay,1.0,1.0,Friendly,London,England,False
+2026-03-27,Morocco,Ecuador,1.0,1.0,Friendly,Madrid,Spain,True
+2026-03-27,Netherlands,Norway,2.0,1.0,Friendly,Amsterdam,Netherlands,False
+2026-03-27,Saudi Arabia,Egypt,0.0,4.0,Friendly,Jeddah,Saudi Arabia,False
+2026-03-27,South Africa,Panama,1.0,1.0,Friendly,Durban,South Africa,False
+2026-03-27,Switzerland,Germany,3.0,4.0,Friendly,Basel,Switzerland,False
+2026-03-28,Haiti,Tunisia,0.0,1.0,Friendly,Toronto,Canada,True
+2026-03-28,Ivory Coast,South Korea,4.0,0.0,Friendly,Milton Keynes,England,True
+2026-03-28,Mexico,Portugal,0.0,0.0,Friendly,Mexico City,Mexico,False
+2026-03-28,Scotland,Japan,0.0,1.0,Friendly,Glasgow,Scotland,False
+2026-03-28,United States,Belgium,2.0,5.0,Friendly,Atlanta,United States,False
+2026-03-29,Colombia,France,1.0,3.0,Friendly,Landover,United States,True
+2026-03-30,Germany,Ghana,2.0,1.0,Friendly,Stuttgart,Germany,False
+2026-03-31,Algeria,Uruguay,0.0,0.0,Friendly,Turin,Italy,True
+2026-03-31,Austria,South Korea,1.0,0.0,Friendly,Vienna,Austria,False
+2026-03-31,Brazil,Croatia,3.0,1.0,Friendly,Orlando,United States,True
+2026-03-31,Canada,Tunisia,0.0,0.0,Friendly,Toronto,Canada,False
+2026-03-31,England,Japan,0.0,1.0,Friendly,London,England,False
+2026-03-31,Ivory Coast,Scotland,1.0,0.0,Friendly,Liverpool,England,True
+2026-03-31,Mexico,Belgium,1.0,1.0,Friendly,Chicago,United States,True
+2026-03-31,Morocco,Paraguay,2.0,1.0,Friendly,Lens,France,True
+2026-03-31,Netherlands,Ecuador,1.0,1.0,Friendly,Eindhoven,Netherlands,False
+2026-03-31,Norway,Switzerland,0.0,0.0,Friendly,Oslo,Norway,False
+2026-03-31,South Africa,Panama,1.0,2.0,Friendly,Cape Town,South Africa,False
+2026-03-31,Spain,Egypt,0.0,0.0,Friendly,Barcelona,Spain,False
+2026-03-31,United States,Portugal,0.0,2.0,Friendly,Atlanta,United States,False
+2026-03-31,Australia,Curaçao,5.0,1.0,FIFA Series,Melbourne,Australia,False
