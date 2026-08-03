@@ -50,3 +50,29 @@ Calculating Championship Probability: Each team's overall chance of lifting the 
 Statistical Stability: Running tens of thousands of simulations ensures that short-term luck evens out, leaving behind a reliable, statistically stable prediction of every team's true championship odds.
 
 
+**ADVANTAGES AND DISADVANTAGES OF THIS MODEL:**
+
+**Advantages**
+---Strength-Adjusted: Multipliers account for quality of opposition, so weak-schedule records aren't overvalued.
+
+---Balanced Evaluation: The Tug-of-War model factors in both attacking strength and defensive vulnerability.
+
+---Statistically Stable: 100,000 Monte Carlo runs smooth out single-match flukes to reveal true odds.
+
+---Fast & Decisive: Simple mathematical weights allow rapid multi-run computing and clean group tie-breaking.
+
+**Disadvantages**
+---Ignores Current Form: Relies on historical averages, missing recent momentum, squad injuries, or tactical changes.
+
+---Oversimplified Shootouts: Knockout ties use a basic 50/50 flip, ignoring keeper skill and penalty history.
+
+---No In-Game Realism: Omits crucial variables like red cards, weather, fatigue, or home-continent advantage.
+
+---Arbitrary Tier Cutoffs: A hard boundary separates 10th and 11th rank, creating artificial strength gaps.
+
+
+
+
+
+
+
