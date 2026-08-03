@@ -1,13 +1,15 @@
-# FIFA-Probability
+# 🏆 FIFA-Probability
 Simulating the 2026 FIFA World Cup in Python using a custom mathematical model, evaluating predicted tournament progression against real-world performance.
 
-**Author's Note**
+** 📌 Author's Note**
 Project Background & Model Performance: Developed as a first-year student fresh out of high school board exams, this project served as an exploratory application of data ingestion, feature engineering, and Monte Carlo statistical mechanics. Generative AI assistants (including Gemini, Claude, and ChatGPT) were leveraged across select sections of the codebase to assist with module structuring and optimization. Despite structural simplifications, such as omitting real-time squad dynamics or in-game variables—the model demonstrated strong alignment with real-world results:
 
 **Actual Tournament Outcome:** Spain won the 2026 FIFA World Cup, defeating Argentina 1–0 after extra time in the final.  
 **Simulation Predictions:** The 100,000-run simulation identified Spain and Argentina as the 2nd and 3rd favorite contenders to win the trophy overall, finishing just behind Portugal (1st favorite).
 
-This project builds an end-to-end Python pipeline and custom mathematical model to simulate the 2026 FIFA World Cup and evaluate prediction accuracy against actual tournament outcomes:
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+**⚙️ Overall Summary of the project**
 
 **1. Data Ingestion & Cleaning (Filter_data.py): Processes raw international football match data from (recents.csv) Johns Hopkins, filtering it into a cleaned dataset (recent_data.csv).**
 
@@ -17,8 +19,9 @@ This project builds an end-to-end Python pipeline and custom mathematical model 
 
 **4. Tournament Simulation (Main.py): Feeds these processed metrics into a custom mathematical model to calculate match probabilities and simulate tournament results and store this results in the Championship_Simulation_Results.csv file.**
 
-**EXPLANATION OF THE MATHEMATICAL MODEL:**
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+**📐 EXPLANATION OF THE MATHEMATICAL MODEL:**
 
 **1. FIFA Tier & Multiplier System (Adjusting for Competition)**
 Not all wins are created equal—a victory against a top-tier national team tells us more about a team's strength than a win against a lower-ranked opponent.
@@ -54,11 +57,11 @@ Massive Iteration: The model simulates the entire 48-team World Cup 100,000 time
 Calculating Championship Probability: Each team's overall chance of lifting the trophy is calculated simply as the number of times they won the tournament divided by 100,000.
 
 Statistical Stability: Running tens of thousands of simulations ensures that short-term luck evens out, leaving behind a reliable, statistically stable prediction of every team's true championship odds.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+**⚖️ Model Evaluation: Strengths & Limitations**
 
-**ADVANTAGES AND DISADVANTAGES OF THIS MODEL:**
-
-**Advantages**
+**⚖️ Advantages**
 ---Strength-Adjusted: Multipliers account for quality of opposition, so weak-schedule records aren't overvalued.
 
 ---Balanced Evaluation: The Tug-of-War model factors in both attacking strength and defensive vulnerability.
@@ -67,7 +70,7 @@ Statistical Stability: Running tens of thousands of simulations ensures that sho
 
 ---Fast & Decisive: Simple mathematical weights allow rapid multi-run computing and clean group tie-breaking.
 
-**Disadvantages**
+**⚖️ Disadvantages**
 ---Ignores Current Form: Relies on historical averages, missing recent momentum, squad injuries, or tactical changes.
 
 ---Oversimplified Shootouts: Knockout ties use a basic 50/50 flip, ignoring keeper skill and penalty history.
