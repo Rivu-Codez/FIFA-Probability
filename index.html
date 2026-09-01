@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Full-Time Odds — A World Cup 2026 Probability Model</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0B2A20;
+    --bg-deep:#081F18;
+    --panel:#123B2C;
+    --panel-2:#16453380;
+    --panel-light:#1C4E39;
+    --line: rgba(244,242,234,0.14);
+    --line-strong: rgba(244,242,234,0.28);
+    --chalk:#F4F2EA;
+    --muted:#9FBCAC;
+    --muted-dim:#6E9080;
+    --gold:#D9A441;
+    --gold-bright:#F0C267;
+    --gold-dim:#8C6B26;
+    --tier1:#F0C267;
+    --tier2:#7FB89A;
+    --tier3:#4F8A6C;
+    --tier4:#33604A;
+    --loss:#C1584A;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--chalk);
+    font-family:'Inter',sans-serif;
+    line-height:1.5;
+  }
+  h1,h2,h3, .disp{
+    font-family:'Oswald',sans-serif;
+    font-weight:600;
+    letter-spacing:0.01em;
+    margin:0;
+  }
+  a{color:var(--gold-bright);}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px;}
+
+  /* faint pitch texture on the whole page */
+  body::before{
+    content:"";
+    position:fixed; inset:0;
+    background-image:
+      repeating-linear-gradient(0deg, rgba(255,255,255,0.012) 0px, rgba(255,255,255,0.012) 1px, transparent 1px, transparent 120px);
+    pointer-events:none;
+    z-index:0;
+  }
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(8,31,24,0.88);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .inner{
+    max-width:1120px;margin:0 auto;padding:16px 28px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .brand{display:flex;align-items:baseline;gap:10px;}
+  .brand .mark{
+    font-family:'Oswald'; font-weight:700; font-size:1.05rem; color:var(--gold-bright);
+    letter-spacing:0.03em;
+  }
+  .brand .sub{color:var(--muted); font-size:0.82rem;}
+  .navlinks{display:flex; gap:26px; font-size:0.88rem;}
+  .navlinks a{color:var(--muted); text-decoration:none; border-bottom:1px solid transparent; padding-bottom:3px; transition:color .15s, border-color .15s;}
+  .navlinks a:hover{color:var(--chalk); border-color:var(--gold);}
+  @media (max-width:720px){ .navlinks{display:none;} }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative; overflow:hidden;
+    padding:76px 0 60px;
+    border-bottom:1px solid var(--line);
+  }
+  .hero::after{
+    content:"";
+    position:absolute; right:-180px; top:-180px;
+    width:560px; height:560px;
+    border:1px solid var(--line-strong);
+    border-radius:50%;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; right:60px; top:100px;
+    width:180px; height:180px;
+    border:1px solid var(--line);
+    border-radius:50%;
+  }
+  .hero .kicker{
+    color:var(--muted); font-size:0.92rem; max-width:520px; margin-bottom:22px;
+  }
+  .hero h1{
+    font-size:clamp(2.1rem, 4.4vw, 3.4rem);
+    line-height:1.08;
+    max-width:680px;
+    color:var(--chalk);
+  }
+  .hero h1 em{ font-style:normal; color:var(--gold-bright); }
+  .hero p.lede{
+    max-width:560px; margin-top:20px; color:var(--muted); font-size:1.02rem;
+  }
+
+  .scoreboard{
+    margin-top:44px;
+    display:flex; align-items:flex-end; gap:28px; flex-wrap:wrap;
+    position:relative; z-index:1;
+  }
+  .flap-group{ display:flex; gap:6px; }
+  .flap{
+    background:var(--bg-deep);
+    border:1px solid var(--line-strong);
+    border-radius:4px;
+    width:52px; height:74px;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Oswald'; font-weight:600; font-size:2.1rem;
+    color:var(--gold-bright);
+    position:relative;
+    box-shadow: inset 0 -18px 22px -20px rgba(0,0,0,0.6);
+  }
+  .flap::after{
+    content:"";
+    position:absolute; left:0; right:0; top:50%;
+    height:1px; background:rgba(0,0,0,0.45);
+  }
+  .flap.pct{ font-size:1.5rem; color:var(--muted); width:38px; }
+  .board-caption{
+    display:flex; flex-direction:column; justify-content:center; gap:4px; padding-bottom:4px;
+  }
+  .board-caption .fave{ font-family:'Oswald'; font-size:1.15rem; color:var(--chalk); letter-spacing:0.03em;}
+  .board-caption .note{ color:var(--muted-dim); font-size:0.82rem; }
+
+  .hero-stats{
+    display:flex; gap:36px; margin-top:48px; flex-wrap:wrap;
+    border-top:1px solid var(--line); padding-top:22px;
+  }
+  .hero-stats .stat b{ display:block; font-family:'Oswald'; font-size:1.5rem; color:var(--chalk); }
+  .hero-stats .stat span{ color:var(--muted-dim); font-size:0.8rem; }
+
+  /* ---------- SECTION SHELL ---------- */
+  section{ padding:64px 0; position:relative; z-index:1; }
+  section + section{ border-top:1px solid var(--line); }
+  .section-head{ max-width:620px; margin-bottom:34px; }
+  .section-head .eyebrow{ color:var(--gold); font-size:0.82rem; font-weight:500; }
+  .section-head h2{ font-size:1.9rem; margin-top:8px; color:var(--chalk); }
+  .section-head p{ color:var(--muted); margin-top:12px; font-size:0.98rem; }
+
+  /* ---------- LEADERBOARD ---------- */
+  .board-controls{
+    display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; gap:16px; flex-wrap:wrap;
+  }
+  .board-controls input{
+    background:var(--panel); border:1px solid var(--line); color:var(--chalk);
+    padding:9px 13px; border-radius:6px; font-family:'Inter'; font-size:0.9rem; width:220px;
+  }
+  .board-controls input::placeholder{ color:var(--muted-dim); }
+  .board-controls .count{ color:var(--muted-dim); font-size:0.82rem; }
+
+  .row{
+    display:grid;
+    grid-template-columns: 34px 1fr 90px 130px;
+    align-items:center;
+    gap:16px;
+    padding:11px 4px;
+    border-bottom:1px solid var(--line);
+  }
+  .row.head{
+    color:var(--muted-dim); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em;
+    border-bottom:1px solid var(--line-strong); padding-bottom:9px;
+  }
+  .row .rank{ font-family:'Oswald'; color:var(--muted-dim); font-size:0.95rem; }
+  .row .team{ font-family:'Oswald'; font-size:1.02rem; color:var(--chalk); }
+  .row .trophies{ color:var(--muted); font-size:0.85rem; text-align:right; }
+  .barcell{ display:flex; align-items:center; gap:10px; }
+  .barcell .track{ flex:1; height:7px; background:var(--panel-light); border-radius:4px; overflow:hidden; }
+  .barcell .fill{ height:100%; background:linear-gradient(90deg, var(--gold-dim), var(--gold-bright)); border-radius:4px; }
+  .barcell .pct{ font-family:'Oswald'; font-size:0.95rem; color:var(--gold-bright); width:52px; text-align:right; }
+  .row:hover{ background:rgba(244,242,234,0.03); }
+
+  /* ---------- GROUPS ---------- */
+  .tier-legend{ display:flex; gap:18px; margin-bottom:26px; flex-wrap:wrap; }
+  .tier-legend .item{ display:flex; align-items:center; gap:7px; font-size:0.8rem; color:var(--muted); }
+  .tier-legend .dot{ width:9px; height:9px; border-radius:50%; }
+
+  .groups-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:14px;
+  }
+  @media (max-width:880px){ .groups-grid{ grid-template-columns:repeat(2, 1fr); } }
+  @media (max-width:520px){ .groups-grid{ grid-template-columns:1fr; } }
+
+  .group-card{
+    background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:14px 16px;
+  }
+  .group-card .g-title{
+    font-family:'Oswald'; font-size:0.85rem; color:var(--muted-dim); letter-spacing:0.05em;
+    margin-bottom:10px; display:flex; justify-content:space-between;
+  }
+  .group-card .g-title .fav{ color:var(--gold); }
+  .g-team{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:5px 0; font-size:0.88rem; border-top:1px solid var(--line);
+  }
+  .g-team:first-of-type{ border-top:none; }
+  .g-team .name{ display:flex; align-items:center; gap:8px; }
+  .g-team .dot{ width:8px; height:8px; border-radius:50%; flex:none; }
+  .g-team .prob{ color:var(--muted); font-variant-numeric:tabular-nums; font-size:0.82rem; }
+
+  /* ---------- METHOD ---------- */
+  .method-grid{ display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px; align-items:start; }
+  @media (max-width:880px){ .method-grid{ grid-template-columns:1fr; } }
+  .method-copy p{ color:var(--muted); font-size:0.98rem; margin:0 0 16px; max-width:56ch; }
+  .method-copy .formula{
+    font-family:'Oswald'; color:var(--chalk); background:var(--panel); border:1px solid var(--line);
+    border-radius:8px; padding:16px 18px; margin:18px 0; font-size:0.98rem; line-height:1.9;
+  }
+  .method-copy .formula span{ color:var(--gold-bright); }
+
+  .rope{
+    background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:24px;
+  }
+  .rope .teams{ display:flex; justify-content:space-between; font-family:'Oswald'; font-size:1rem; color:var(--chalk); margin-bottom:14px;}
+  .rope .line{
+    height:2px; background:repeating-linear-gradient(90deg, var(--muted-dim) 0 8px, transparent 8px 16px);
+    position:relative; margin:26px 0;
+  }
+  .rope .line .knot{
+    position:absolute; top:50%; left:58%; transform:translate(-50%,-50%);
+    width:14px; height:14px; border-radius:50%; background:var(--gold-bright);
+    box-shadow:0 0 0 5px rgba(217,164,65,0.18);
+  }
+  .rope .caption{ color:var(--muted-dim); font-size:0.78rem; text-align:center; }
+
+  .stage-steps{ display:flex; flex-direction:column; gap:0; margin-top:22px; }
+  .stage-steps .step{
+    display:grid; grid-template-columns:26px 1fr auto; gap:12px; align-items:baseline;
+    padding:10px 0; border-top:1px solid var(--line);
+  }
+  .stage-steps .step:first-child{ border-top:none; }
+  .stage-steps .step .n{ font-family:'Oswald'; color:var(--gold-dim); font-size:0.85rem; }
+  .stage-steps .step .name{ font-size:0.92rem; color:var(--chalk); }
+  .stage-steps .step .mult{ font-family:'Oswald'; font-size:0.82rem; color:var(--muted); }
+
+  /* ---------- TABLE ---------- */
+  .table-wrap{ overflow-x:auto; border:1px solid var(--line); border-radius:8px; }
+  table{ width:100%; border-collapse:collapse; font-size:0.86rem; min-width:760px; }
+  thead th{
+    text-align:left; padding:11px 14px; background:var(--panel);
+    color:var(--muted-dim); font-weight:500; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.05em;
+    border-bottom:1px solid var(--line-strong); cursor:pointer; white-space:nowrap; user-select:none;
+    position:sticky; top:0;
+  }
+  thead th:hover{ color:var(--chalk); }
+  thead th .arrow{ opacity:0.5; margin-left:4px; font-size:0.7rem; }
+  tbody td{ padding:10px 14px; border-bottom:1px solid var(--line); color:var(--muted); white-space:nowrap; }
+  tbody tr:hover{ background:rgba(244,242,234,0.03); }
+  tbody td.team-name{ color:var(--chalk); font-family:'Oswald'; font-size:0.92rem; }
+  tbody td.num{ font-variant-numeric:tabular-nums; text-align:right; }
+  td.win{ color:var(--tier2); }
+  td.loss-c{ color:var(--loss); }
+
+  footer{
+    padding:40px 0 60px; color:var(--muted-dim); font-size:0.82rem;
+  }
+  footer .fline{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; border-top:1px solid var(--line); padding-top:22px;}
+  footer a{ color:var(--muted); }
+
+  ::selection{ background:var(--gold); color:var(--bg-deep); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <div class="brand"><span class="mark">FULL-TIME ODDS</span><span class="sub">2026 World Cup model</span></div>
+    <div class="navlinks">
+      <a href="#odds">Title odds</a>
+      <a href="#groups">Groups</a>
+      <a href="#method">The model</a>
+      <a href="#data">Team file</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">A Monte Carlo simulation of the 2026 FIFA World Cup, built on 3,700+ international results since January 2023.</div>
+    <h1>100,000 tournaments played out in code. <em>One clear favourite.</em></h1>
+    <p class="lede">Every match — group stage through the final — is decided by a weighted tug-of-war between two teams' win, loss and draw rates, tilted by their FIFA ranking. Run it 100,000 times and a picture of the tournament emerges.</p>
+
+    <div class="scoreboard">
+      <div class="flap-group" id="flapNumber"></div>
+      <div class="flap pct">%</div>
+      <div class="board-caption">
+        <div class="fave" id="faveTeam">—</div>
+        <div class="note" id="faveNote">championship probability, highest of 48 teams</div>
+      </div>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat"><b>100,000</b><span>simulated tournaments</span></div>
+      <div class="stat"><b>48</b><span>qualified teams</span></div>
+      <div class="stat"><b>12</b><span>groups of four</span></div>
+      <div class="stat"><b id="matchCount">—</b><span>historic matches analysed</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="odds">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Title odds</div>
+      <h2>Where each team's championship probability landed</h2>
+      <p>Ranked by trophies won across all 100,000 simulated tournaments. Search a team, or just scroll the whole field.</p>
+    </div>
+
+    <div class="board-controls">
+      <input type="text" id="oddsSearch" placeholder="Find a team…">
+      <div class="count" id="oddsCount"></div>
+    </div>
+
+    <div class="row head">
+      <div>#</div><div>Team</div><div style="text-align:right">Trophies</div><div>Probability</div>
+    </div>
+    <div id="oddsList"></div>
+  </div>
+</section>
+
+<section id="groups">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">The draw</div>
+      <h2>All 12 groups, seeded by title odds</h2>
+      <p>Each dot marks a team's FIFA-ranking tier — the tier that sets its multiplier in the simulation. The gold name in each group is the one most likely to win it all.</p>
+    </div>
+
+    <div class="tier-legend">
+      <div class="item"><span class="dot" style="background:var(--tier1)"></span>Tier 1 · top 10 · ×1.50</div>
+      <div class="item"><span class="dot" style="background:var(--tier2)"></span>Tier 2 · 11–30 · ×1.25</div>
+      <div class="item"><span class="dot" style="background:var(--tier3)"></span>Tier 3 · 31–50 · ×1.00</div>
+      <div class="item"><span class="dot" style="background:var(--tier4)"></span>Tier 4 · 51+ · ×0.75</div>
+    </div>
+
+    <div class="groups-grid" id="groupsGrid"></div>
+  </div>
+</section>
+
+<section id="method">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Under the hood</div>
+      <h2>How a single match gets decided</h2>
+    </div>
+
+    <div class="method-grid">
+      <div class="method-copy">
+        <p>Each team's historical win, loss and draw rate (from every match it played between January 2023 and June 2026) is multiplied by a strength factor drawn from its FIFA ranking tier. A team that beat mostly Tier 1 opposition earns more credit than one with the same record against Tier 4 sides.</p>
+
+        <div class="formula">
+          Win<span>A</span> = Win%<span>A</span> + Loss%<span>B</span><br>
+          Win<span>B</span> = Win%<span>B</span> + Loss%<span>A</span><br>
+          Draw = Tie%<span>A</span> + Tie%<span>B</span>
+        </div>
+
+        <p>Those three weighted values become the odds fed into a weighted random draw for the match — so a heavy favourite wins most of the time, but never all of the time. Drawn group games are settled for the group table on points as normal; a drawn knockout match goes to a coin-flip shootout.</p>
+
+        <p>The ranking multiplier itself tapers as the tournament goes on — full strength in the group stage, roughly half-strength through the round of 32 and quarter-finals, and switched off entirely for the semi-finals and final, where the model assumes reputation stops mattering and form takes over.</p>
+      </div>
+
+      <div>
+        <div class="rope">
+          <div class="teams"><span>TEAM A</span><span>TEAM B</span></div>
+          <div class="line"><div class="knot"></div></div>
+          <div class="caption">Match weight = win rate of one side + loss rate of the other, tier-adjusted</div>
+        </div>
+
+        <div class="stage-steps">
+          <div class="step"><span class="n">1</span><span class="name">Group stage</span><span class="mult">×1.50 / 1.25 / 1.00 / 0.75</span></div>
+          <div class="step"><span class="n">2</span><span class="name">Round of 32 → Round of 16</span><span class="mult">×1.20 / 1.15 / 1.10 / 1.00</span></div>
+          <div class="step"><span class="n">3</span><span class="name">Quarter-finals</span><span class="mult">×1.20 / 1.15 / 1.10 / 1.00</span></div>
+          <div class="step"><span class="n">4</span><span class="name">Semi-finals</span><span class="mult">no multiplier</span></div>
+          <div class="step"><span class="n">5</span><span class="name">Final</span><span class="mult">no multiplier</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="data">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">The team file</div>
+      <h2>Every qualified team's underlying record</h2>
+      <p>The raw match history each simulation is built from. Click a column to sort it.</p>
+    </div>
+
+    <div class="board-controls">
+      <input type="text" id="tableSearch" placeholder="Filter teams…">
+      <div class="count" id="tableCount"></div>
+    </div>
+
+    <div class="table-wrap">
+      <table id="statsTable">
+        <thead>
+          <tr>
+            <th data-key="team_name">Team</th>
+            <th data-key="fifa_rank">FIFA rank</th>
+            <th data-key="matches_played">Played</th>
+            <th data-key="matches_won">Won</th>
+            <th data-key="matches_lost">Lost</th>
+            <th data-key="matches_tied">Drawn</th>
+            <th data-key="win_percentage">Win %</th>
+            <th data-key="goals_per_match">Goals / match</th>
+            <th data-key="probability">Title odds</th>
+          </tr>
+        </thead>
+        <tbody id="statsBody"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fline">
+      <div>Match data: international results, Jan 2023 – Jun 2026, filtered to the 48 qualified nations. Model, data pipeline and dashboard by the project author.</div>
+      <div>Built for fun, not for betting.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const RESULTS = [
+{"team_name":"Portugal","trophies_won":8165,"probability":8.16},
+{"team_name":"Spain","trophies_won":6682,"probability":6.68},
+{"team_name":"Argentina","trophies_won":5892,"probability":5.89},
+{"team_name":"Algeria","trophies_won":5012,"probability":5.01},
+{"team_name":"Morocco","trophies_won":4937,"probability":4.94},
+{"team_name":"France","trophies_won":4673,"probability":4.67},
+{"team_name":"Colombia","trophies_won":4384,"probability":4.38},
+{"team_name":"Austria","trophies_won":4051,"probability":4.05},
+{"team_name":"South Korea","trophies_won":3743,"probability":3.74},
+{"team_name":"Japan","trophies_won":3372,"probability":3.37},
+{"team_name":"Tunisia","trophies_won":3228,"probability":3.23},
+{"team_name":"Croatia","trophies_won":2775,"probability":2.77},
+{"team_name":"Australia","trophies_won":2548,"probability":2.55},
+{"team_name":"Germany","trophies_won":2539,"probability":2.54},
+{"team_name":"Switzerland","trophies_won":2479,"probability":2.48},
+{"team_name":"Belgium","trophies_won":2399,"probability":2.4},
+{"team_name":"Senegal","trophies_won":2394,"probability":2.39},
+{"team_name":"Mexico","trophies_won":2348,"probability":2.35},
+{"team_name":"Ivory Coast","trophies_won":2209,"probability":2.21},
+{"team_name":"Iran","trophies_won":2187,"probability":2.19},
+{"team_name":"Uruguay","trophies_won":2038,"probability":2.04},
+{"team_name":"South Africa","trophies_won":1957,"probability":1.96},
+{"team_name":"Brazil","trophies_won":1943,"probability":1.94},
+{"team_name":"England","trophies_won":1870,"probability":1.87},
+{"team_name":"Ecuador","trophies_won":1705,"probability":1.7},
+{"team_name":"Egypt","trophies_won":1600,"probability":1.6},
+{"team_name":"United States","trophies_won":1516,"probability":1.52},
+{"team_name":"Canada","trophies_won":1212,"probability":1.21},
+{"team_name":"Netherlands","trophies_won":1168,"probability":1.17},
+{"team_name":"Qatar","trophies_won":1121,"probability":1.12},
+{"team_name":"Turkey","trophies_won":983,"probability":0.98},
+{"team_name":"Paraguay","trophies_won":856,"probability":0.86},
+{"team_name":"Uzbekistan","trophies_won":809,"probability":0.81},
+{"team_name":"Jordan","trophies_won":762,"probability":0.76},
+{"team_name":"Cape Verde","trophies_won":618,"probability":0.62},
+{"team_name":"Iraq","trophies_won":571,"probability":0.57},
+{"team_name":"Panama","trophies_won":469,"probability":0.47},
+{"team_name":"Norway","trophies_won":468,"probability":0.47},
+{"team_name":"Saudi Arabia","trophies_won":448,"probability":0.45},
+{"team_name":"Czech Republic","trophies_won":380,"probability":0.38},
+{"team_name":"Scotland","trophies_won":379,"probability":0.38},
+{"team_name":"Sweden","trophies_won":284,"probability":0.28},
+{"team_name":"Curaçao","trophies_won":255,"probability":0.26},
+{"team_name":"New Zealand","trophies_won":174,"probability":0.17},
+{"team_name":"DR Congo","trophies_won":158,"probability":0.16},
+{"team_name":"Haiti","trophies_won":131,"probability":0.13},
+{"team_name":"Bosnia and Herzegovina","trophies_won":72,"probability":0.07},
+{"team_name":"Ghana","trophies_won":36,"probability":0.04}
+];
+
+const TEAM_STATS = [
+{"team_name":"Algeria","matches_played":10,"matches_won":5,"matches_lost":1,"matches_tied":4,"win_percentage":50.0,"loss_percentage":10.0,"tie_percentage":40.0,"total_goals":19,"goals_per_match":1.9},
+{"team_name":"Argentina","matches_played":18,"matches_won":12,"matches_lost":4,"matches_tied":2,"win_percentage":66.67,"loss_percentage":22.22,"tie_percentage":11.11,"total_goals":29,"goals_per_match":1.61},
+{"team_name":"Australia","matches_played":18,"matches_won":8,"matches_lost":6,"matches_tied":4,"win_percentage":44.44,"loss_percentage":33.33,"tie_percentage":22.22,"total_goals":25,"goals_per_match":1.39},
+{"team_name":"Austria","matches_played":16,"matches_won":9,"matches_lost":4,"matches_tied":3,"win_percentage":56.25,"loss_percentage":25.0,"tie_percentage":18.75,"total_goals":36,"goals_per_match":2.25},
+{"team_name":"Belgium","matches_played":11,"matches_won":4,"matches_lost":3,"matches_tied":4,"win_percentage":36.36,"loss_percentage":27.27,"tie_percentage":36.36,"total_goals":20,"goals_per_match":1.82},
+{"team_name":"Bosnia and Herzegovina","matches_played":9,"matches_won":0,"matches_lost":7,"matches_tied":2,"win_percentage":0.0,"loss_percentage":77.78,"tie_percentage":22.22,"total_goals":6,"goals_per_match":0.67},
+{"team_name":"Brazil","matches_played":25,"matches_won":9,"matches_lost":9,"matches_tied":7,"win_percentage":36.0,"loss_percentage":36.0,"tie_percentage":28.0,"total_goals":37,"goals_per_match":1.48},
+{"team_name":"Canada","matches_played":21,"matches_won":5,"matches_lost":7,"matches_tied":9,"win_percentage":23.81,"loss_percentage":33.33,"tie_percentage":42.86,"total_goals":16,"goals_per_match":0.76},
+{"team_name":"Cape Verde","matches_played":10,"matches_won":1,"matches_lost":3,"matches_tied":6,"win_percentage":10.0,"loss_percentage":30.0,"tie_percentage":60.0,"total_goals":7,"goals_per_match":0.7},
+{"team_name":"Colombia","matches_played":29,"matches_won":15,"matches_lost":6,"matches_tied":8,"win_percentage":51.72,"loss_percentage":20.69,"tie_percentage":27.59,"total_goals":49,"goals_per_match":1.69},
+{"team_name":"Croatia","matches_played":18,"matches_won":8,"matches_lost":6,"matches_tied":4,"win_percentage":44.44,"loss_percentage":33.33,"tie_percentage":22.22,"total_goals":26,"goals_per_match":1.44},
+{"team_name":"Curaçao","matches_played":6,"matches_won":1,"matches_lost":4,"matches_tied":1,"win_percentage":16.67,"loss_percentage":66.67,"tie_percentage":16.67,"total_goals":8,"goals_per_match":1.33},
+{"team_name":"Czech Republic","matches_played":6,"matches_won":1,"matches_lost":3,"matches_tied":2,"win_percentage":16.67,"loss_percentage":50.0,"tie_percentage":33.33,"total_goals":6,"goals_per_match":1.0},
+{"team_name":"DR Congo","matches_played":10,"matches_won":0,"matches_lost":4,"matches_tied":6,"win_percentage":0.0,"loss_percentage":40.0,"tie_percentage":60.0,"total_goals":7,"goals_per_match":0.7},
+{"team_name":"Ecuador","matches_played":21,"matches_won":5,"matches_lost":4,"matches_tied":12,"win_percentage":23.81,"loss_percentage":19.05,"tie_percentage":57.14,"total_goals":14,"goals_per_match":0.67},
+{"team_name":"Egypt","matches_played":17,"matches_won":5,"matches_lost":5,"matches_tied":7,"win_percentage":29.41,"loss_percentage":29.41,"tie_percentage":41.18,"total_goals":23,"goals_per_match":1.35},
+{"team_name":"England","matches_played":11,"matches_won":4,"matches_lost":4,"matches_tied":3,"win_percentage":36.36,"loss_percentage":36.36,"tie_percentage":27.27,"total_goals":15,"goals_per_match":1.36},
+{"team_name":"France","matches_played":19,"matches_won":11,"matches_lost":5,"matches_tied":3,"win_percentage":57.89,"loss_percentage":26.32,"tie_percentage":15.79,"total_goals":31,"goals_per_match":1.63},
+{"team_name":"Germany","matches_played":21,"matches_won":10,"matches_lost":8,"matches_tied":3,"win_percentage":47.62,"loss_percentage":38.1,"tie_percentage":14.29,"total_goals":42,"goals_per_match":2.0},
+{"team_name":"Ghana","matches_played":8,"matches_won":0,"matches_lost":7,"matches_tied":1,"win_percentage":0.0,"loss_percentage":87.5,"tie_percentage":12.5,"total_goals":5,"goals_per_match":0.62},
+{"team_name":"Haiti","matches_played":6,"matches_won":1,"matches_lost":5,"matches_tied":0,"win_percentage":16.67,"loss_percentage":83.33,"tie_percentage":0.0,"total_goals":5,"goals_per_match":0.83},
+{"team_name":"Iran","matches_played":11,"matches_won":3,"matches_lost":2,"matches_tied":6,"win_percentage":27.27,"loss_percentage":18.18,"tie_percentage":54.55,"total_goals":13,"goals_per_match":1.18},
+{"team_name":"Iraq","matches_played":15,"matches_won":4,"matches_lost":8,"matches_tied":3,"win_percentage":26.67,"loss_percentage":53.33,"tie_percentage":20.0,"total_goals":12,"goals_per_match":0.8},
+{"team_name":"Ivory Coast","matches_played":11,"matches_won":4,"matches_lost":3,"matches_tied":4,"win_percentage":36.36,"loss_percentage":27.27,"tie_percentage":36.36,"total_goals":13,"goals_per_match":1.18},
+{"team_name":"Japan","matches_played":19,"matches_won":9,"matches_lost":5,"matches_tied":5,"win_percentage":47.37,"loss_percentage":26.32,"tie_percentage":26.32,"total_goals":34,"goals_per_match":1.79},
+{"team_name":"Jordan","matches_played":20,"matches_won":7,"matches_lost":9,"matches_tied":4,"win_percentage":35.0,"loss_percentage":45.0,"tie_percentage":20.0,"total_goals":23,"goals_per_match":1.15},
+{"team_name":"Mexico","matches_played":34,"matches_won":13,"matches_lost":9,"matches_tied":12,"win_percentage":38.24,"loss_percentage":26.47,"tie_percentage":35.29,"total_goals":44,"goals_per_match":1.29},
+{"team_name":"Morocco","matches_played":12,"matches_won":6,"matches_lost":2,"matches_tied":4,"win_percentage":50.0,"loss_percentage":16.67,"tie_percentage":33.33,"total_goals":17,"goals_per_match":1.42},
+{"team_name":"Netherlands","matches_played":18,"matches_won":5,"matches_lost":7,"matches_tied":6,"win_percentage":27.78,"loss_percentage":38.89,"tie_percentage":33.33,"total_goals":33,"goals_per_match":1.83},
+{"team_name":"New Zealand","matches_played":13,"matches_won":1,"matches_lost":8,"matches_tied":4,"win_percentage":7.69,"loss_percentage":61.54,"tie_percentage":30.77,"total_goals":7,"goals_per_match":0.54},
+{"team_name":"Norway","matches_played":11,"matches_won":2,"matches_lost":6,"matches_tied":3,"win_percentage":18.18,"loss_percentage":54.55,"tie_percentage":27.27,"total_goals":16,"goals_per_match":1.45},
+{"team_name":"Panama","matches_played":19,"matches_won":5,"matches_lost":12,"matches_tied":2,"win_percentage":26.32,"loss_percentage":63.16,"tie_percentage":10.53,"total_goals":16,"goals_per_match":0.84},
+{"team_name":"Paraguay","matches_played":18,"matches_won":5,"matches_lost":8,"matches_tied":5,"win_percentage":27.78,"loss_percentage":44.44,"tie_percentage":27.78,"total_goals":16,"goals_per_match":0.89},
+{"team_name":"Portugal","matches_played":15,"matches_won":9,"matches_lost":1,"matches_tied":5,"win_percentage":60.0,"loss_percentage":6.67,"tie_percentage":33.33,"total_goals":30,"goals_per_match":2.0},
+{"team_name":"Qatar","matches_played":14,"matches_won":5,"matches_lost":7,"matches_tied":2,"win_percentage":35.71,"loss_percentage":50.0,"tie_percentage":14.29,"total_goals":16,"goals_per_match":1.14},
+{"team_name":"Saudi Arabia","matches_played":21,"matches_won":5,"matches_lost":11,"matches_tied":5,"win_percentage":23.81,"loss_percentage":52.38,"tie_percentage":23.81,"total_goals":13,"goals_per_match":0.62},
+{"team_name":"Scotland","matches_played":15,"matches_won":3,"matches_lost":9,"matches_tied":3,"win_percentage":20.0,"loss_percentage":60.0,"tie_percentage":20.0,"total_goals":14,"goals_per_match":0.93},
+{"team_name":"Senegal","matches_played":10,"matches_won":4,"matches_lost":3,"matches_tied":3,"win_percentage":40.0,"loss_percentage":30.0,"tie_percentage":30.0,"total_goals":14,"goals_per_match":1.4},
+{"team_name":"South Africa","matches_played":11,"matches_won":3,"matches_lost":2,"matches_tied":6,"win_percentage":27.27,"loss_percentage":18.18,"tie_percentage":54.55,"total_goals":11,"goals_per_match":1.0},
+{"team_name":"South Korea","matches_played":20,"matches_won":10,"matches_lost":5,"matches_tied":5,"win_percentage":50.0,"loss_percentage":25.0,"tie_percentage":25.0,"total_goals":29,"goals_per_match":1.45},
+{"team_name":"Spain","matches_played":20,"matches_won":11,"matches_lost":2,"matches_tied":7,"win_percentage":55.0,"loss_percentage":10.0,"tie_percentage":35.0,"total_goals":45,"goals_per_match":2.25},
+{"team_name":"Sweden","matches_played":9,"matches_won":2,"matches_lost":6,"matches_tied":1,"win_percentage":22.22,"loss_percentage":66.67,"tie_percentage":11.11,"total_goals":13,"goals_per_match":1.44},
+{"team_name":"Switzerland","matches_played":12,"matches_won":4,"matches_lost":3,"matches_tied":5,"win_percentage":33.33,"loss_percentage":25.0,"tie_percentage":41.67,"total_goals":24,"goals_per_match":2.0},
+{"team_name":"Tunisia","matches_played":13,"matches_won":5,"matches_lost":2,"matches_tied":6,"win_percentage":38.46,"loss_percentage":15.38,"tie_percentage":46.15,"total_goals":14,"goals_per_match":1.08},
+{"team_name":"Turkey","matches_played":13,"matches_won":5,"matches_lost":7,"matches_tied":1,"win_percentage":38.46,"loss_percentage":53.85,"tie_percentage":7.69,"total_goals":16,"goals_per_match":1.23},
+{"team_name":"United States","matches_played":33,"matches_won":12,"matches_lost":14,"matches_tied":7,"win_percentage":36.36,"loss_percentage":42.42,"tie_percentage":21.21,"total_goals":46,"goals_per_match":1.39},
+{"team_name":"Uruguay","matches_played":24,"matches_won":8,"matches_lost":6,"matches_tied":10,"win_percentage":33.33,"loss_percentage":25.0,"tie_percentage":41.67,"total_goals":29,"goals_per_match":1.21},
+{"team_name":"Uzbekistan","matches_played":15,"matches_won":2,"matches_lost":4,"matches_tied":9,"win_percentage":13.33,"loss_percentage":26.67,"tie_percentage":60.0,"total_goals":17,"goals_per_match":1.13}
+];
+
+const GROUPS = {
+  "Group A": ["Mexico","South Africa","South Korea","Czech Republic"],
+  "Group B": ["Canada","Bosnia and Herzegovina","Qatar","Switzerland"],
+  "Group C": ["Brazil","Morocco","Haiti","Scotland"],
+  "Group D": ["United States","Paraguay","Australia","Turkey"],
+  "Group E": ["Germany","Curaçao","Ivory Coast","Ecuador"],
+  "Group F": ["Netherlands","Japan","Sweden","Tunisia"],
+  "Group G": ["Belgium","Egypt","Iran","New Zealand"],
+  "Group H": ["Spain","Cape Verde","Saudi Arabia","Uruguay"],
+  "Group I": ["France","Senegal","Iraq","Norway"],
+  "Group J": ["Argentina","Algeria","Austria","Jordan"],
+  "Group K": ["Portugal","DR Congo","Uzbekistan","Colombia"],
+  "Group L": ["England","Croatia","Ghana","Panama"]
+};
+
+const FIFA_RANKINGS = {
+  "France":1,"Spain":2,"Argentina":3,"England":4,"Portugal":5,"Brazil":6,"Netherlands":7,"Morocco":8,"Belgium":9,"Germany":10,
+  "Croatia":11,"Colombia":13,"Senegal":14,"Mexico":15,"United States":16,"Uruguay":17,"Japan":18,"Switzerland":19,"Iran":21,"Turkey":22,
+  "Ecuador":23,"Austria":24,"South Korea":25,"Australia":27,"Algeria":28,"Egypt":29,"Canada":30,"Norway":31,"Panama":33,"Ivory Coast":34,
+  "Sweden":38,"Paraguay":40,"Czech Republic":41,"Scotland":43,"Tunisia":44,"DR Congo":46,"Qatar":55,"Iraq":57,"South Africa":60,"Saudi Arabia":61,
+  "Jordan":63,"Bosnia and Herzegovina":65,"Cape Verde":69,"Ghana":74,"Curaçao":82,"Haiti":83,"New Zealand":85,"Uzbekistan":50
+};
+
+function tierOf(team){
+  const r = FIFA_RANKINGS[team] ?? 55;
+  if(r<=10) return 1;
+  if(r<=30) return 2;
+  if(r<=50) return 3;
+  return 4;
+}
+const tierColor = {1:"var(--tier1)",2:"var(--tier2)",3:"var(--tier3)",4:"var(--tier4)"};
+
+const probByTeam = Object.fromEntries(RESULTS.map(r=>[r.team_name, r.probability]));
+const trophiesByTeam = Object.fromEntries(RESULTS.map(r=>[r.team_name, r.trophies_won]));
+
+/* ---- Hero flap number ---- */
+(function(){
+  const top = RESULTS[0];
+  const flapHost = document.getElementById('flapNumber');
+  const digits = top.probability.toFixed(2).replace('.','').padStart(3,'0'); // e.g. 8.16 -> "816"
+  const display = top.probability.toFixed(2); // "8.16"
+  display.split('').forEach(ch=>{
+    if(ch === '.'){
+      const dot = document.createElement('div');
+      dot.style.cssText = "display:flex;align-items:flex-end;padding-bottom:10px;color:var(--muted);font-family:Oswald;font-size:2rem;";
+      dot.textContent = '.';
+      flapHost.appendChild(dot);
+    } else {
+      const f = document.createElement('div');
+      f.className = 'flap';
+      f.textContent = ch;
+      flapHost.appendChild(f);
+    }
+  });
+  document.getElementById('faveTeam').textContent = top.team_name;
+  document.getElementById('matchCount').textContent = TEAM_STATS.reduce((s,t)=>s+t.matches_played,0).toLocaleString() ;
+})();
+
+/* ---- Odds leaderboard ---- */
+const oddsList = document.getElementById('oddsList');
+function renderOdds(filter=''){
+  const f = filter.trim().toLowerCase();
+  const rows = RESULTS.filter(r=>r.team_name.toLowerCase().includes(f));
+  oddsList.innerHTML = rows.map((r,i)=>{
+    const rank = RESULTS.indexOf(r)+1;
+    return `<div class="row">
+      <div class="rank">${rank}</div>
+      <div class="team">${r.team_name}</div>
+      <div class="trophies">${r.trophies_won.toLocaleString()}</div>
+      <div class="barcell">
+        <div class="track"><div class="fill" style="width:${(r.probability/RESULTS[0].probability*100).toFixed(1)}%"></div></div>
+        <div class="pct">${r.probability.toFixed(2)}%</div>
+      </div>
+    </div>`;
+  }).join('');
+  document.getElementById('oddsCount').textContent = `${rows.length} of ${RESULTS.length} teams`;
+}
+renderOdds();
+document.getElementById('oddsSearch').addEventListener('input', e=>renderOdds(e.target.value));
+
+/* ---- Groups grid ---- */
+const groupsGrid = document.getElementById('groupsGrid');
+groupsGrid.innerHTML = Object.entries(GROUPS).map(([gname, teams])=>{
+  const sorted = [...teams].sort((a,b)=> (probByTeam[b]||0) - (probByTeam[a]||0));
+  const fav = sorted[0];
+  return `<div class="group-card">
+    <div class="g-title"><span>${gname.toUpperCase()}</span><span class="fav">${fav}</span></div>
+    ${sorted.map(t=>`
+      <div class="g-team">
+        <span class="name"><span class="dot" style="background:${tierColor[tierOf(t)]}"></span>${t}</span>
+        <span class="prob">${(probByTeam[t]||0).toFixed(2)}%</span>
+      </div>`).join('')}
+  </div>`;
+}).join('');
+
+/* ---- Stats table ---- */
+const tbody = document.getElementById('statsBody');
+let sortKey = 'probability';
+let sortDir = -1;
+
+function fullStatsRows(){
+  return TEAM_STATS.map(t=>({
+    ...t,
+    fifa_rank: FIFA_RANKINGS[t.team_name] ?? 55,
+    probability: probByTeam[t.team_name] ?? 0,
+    trophies_won: trophiesByTeam[t.team_name] ?? 0
+  }));
+}
+
+function renderTable(filter=''){
+  const f = filter.trim().toLowerCase();
+  let rows = fullStatsRows().filter(r=>r.team_name.toLowerCase().includes(f));
+  rows.sort((a,b)=>{
+    const av=a[sortKey], bv=b[sortKey];
+    if(typeof av === 'string') return sortDir * av.localeCompare(bv);
+    return sortDir * (av - bv);
+  });
+  tbody.innerHTML = rows.map(r=>`
+    <tr>
+      <td class="team-name">${r.team_name}</td>
+      <td class="num">#${r.fifa_rank}</td>
+      <td class="num">${r.matches_played}</td>
+      <td class="num win">${r.matches_won}</td>
+      <td class="num loss-c">${r.matches_lost}</td>
+      <td class="num">${r.matches_tied}</td>
+      <td class="num">${r.win_percentage.toFixed(1)}%</td>
+      <td class="num">${r.goals_per_match.toFixed(2)}</td>
+      <td class="num">${r.probability.toFixed(2)}%</td>
+    </tr>`).join('');
+  document.getElementById('tableCount').textContent = `${rows.length} of ${TEAM_STATS.length} teams`;
+}
+renderTable();
+document.getElementById('tableSearch').addEventListener('input', e=>renderTable(e.target.value));
+
+document.querySelectorAll('#statsTable thead th').forEach(th=>{
+  th.addEventListener('click', ()=>{
+    const key = th.dataset.key;
+    if(sortKey === key){ sortDir *= -1; } else { sortKey = key; sortDir = key==='team_name' ? 1 : -1; }
+    renderTable(document.getElementById('tableSearch').value);
+  });
+});
+</script>
+</body>
+</html>
