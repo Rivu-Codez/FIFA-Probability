@@ -70,7 +70,13 @@ Statistical Stability: Running tens of thousands of simulations ensures that sho
 
 ---Arbitrary Tier Cutoffs: A hard boundary separates 10th and 11th rank, creating artificial strength gaps.
 
+** Dashboard for the whole site **
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+-- As of 1st September 2026, using AI to create a dashboard for the whole project.
+-- This dashboard contains the result and the summary of the project.
+-- It also includes a short explanantion of the mathematical model.
 
 
 
