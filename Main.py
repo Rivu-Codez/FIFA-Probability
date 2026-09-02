@@ -523,3 +523,7 @@ df_predictions.to_csv(output_file_path, index=False)
 
 print("SUCCESFULLY SIMULATED THE WORLD CUP 100000 TIMES")
 
+
+
+
+
